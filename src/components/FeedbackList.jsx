@@ -3,7 +3,6 @@ import { useContext } from "react";
 import FeedbackItem from "./FeedbackItem";
 import PropTypes from "prop-types";
 import FeedbackContext from "../context/FeedbackContext";
-import FadeLoader from "react-spinners/ClipLoader";
 import Spinner from "./shared/Spinner";
 
 function FeedbackList() {
@@ -13,7 +12,7 @@ function FeedbackList() {
     return <Spinner />;
   }
 
-  return !isLoading ? (
+  return isLoading ? (
     <Spinner />
   ) : (
     <div className="feedback-list">
