@@ -43,13 +43,14 @@ function FeedbackForm() {
         rating,
       };
 
-      if (feedbackEdit.edit) {
+      if (feedbackEdit.edit === true) {
         updateFeedback(feedbackEdit.item.id, newFeedback);
       } else {
         addFeedback(newFeedback);
       }
-
       setText("");
+      feedbackEdit.edit = false;
+      setBtnDisabled(true);
     }
   };
 
