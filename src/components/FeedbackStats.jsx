@@ -6,7 +6,8 @@ function FeedbackStats() {
   const { feedback } = useContext(FeedbackContext);
   let average =
     feedback.reduce((acc, cur) => {
-      return acc + cur.rating;
+      console.log(acc, cur.rating);
+      return acc + Number(cur.rating);
     }, 0) / feedback.length;
 
   average = average.toFixed(1).replace(/[.,]0$/, "");
