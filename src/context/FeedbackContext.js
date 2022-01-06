@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const FeedbackContext = createContext();
@@ -30,6 +30,10 @@ export const FeedbackProvider = ({ children }) => {
     item: {},
     edit: false,
   });
+
+  useEffect(() => {
+    // fetch data here
+  }, []);
 
   const deleteFeedback = (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
